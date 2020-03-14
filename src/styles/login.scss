@@ -1,0 +1,81 @@
+
+.title {
+    color: white;
+}
+
+.red-background {
+    background-color: #ff0000;
+}
+
+.login-page {
+    flex-direction: column;
+    height: 100vh;
+    .login-form-card {
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+        height: 500px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .form-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img{
+                max-height: 200px;
+                max-width: 200px;
+            }
+        }
+
+        .form-container {
+            height: 50%;
+            align-items: center;
+            justify-content: space-around;
+        
+            .registration-link {
+                align-self: start;
+                margin-left: 35px;
+                margin-top: -17px;
+                color: #ff0000;
+                cursor: pointer;
+            }
+        }
+    }
+}
+            
+
+.registration-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .registration-form-card {
+        background-color: white;
+        border-radius: 5px;
+        height: 450px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .form-container {
+            height: 100%;
+            justify-content: space-between;
+            padding: 20px;
+            overflow: hidden;
+            .back-to-link {
+                align-self: start;
+                margin-top: -22px;
+                color: #ff0000;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
