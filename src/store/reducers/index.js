@@ -1,10 +1,10 @@
-import userInfo from './userInfo';
-import auth from './auth';
+import user from './user';
+import token from './token';
 import { combineReducers } from 'redux';
 
 const reducers = combineReducers({
-    userInfo,
-    auth
+    user,
+    token
 })
 
 export default reducers;

@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { LoginForm, RegistrationForm } from '../../components';
+import React from 'react';
+import { LoginForm } from '../../components';
 import { Grid } from '@material-ui/core';
-import { getAuthentificationStep } from '../../store/selectors';
 
 
 function LoginPage() {
-
-
     return (
         <Grid
             container

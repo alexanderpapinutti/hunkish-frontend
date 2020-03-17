@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { TextField, Button, Paper, FormControl, FormHelperText } from '@material-ui/core';
 import logo from '../assets/logo-milan.png'
-import { setUsername, setPassword } from '../store/actions';
+import { setUser, resetUser, setToken } from '../store/actions';
 import { getUser } from '../store/selectors';
 import history from '../utils/history'
 
@@ -12,9 +12,19 @@ class LoginFormComponent extends Component {
         const { user, dispatch } = this.props;
         e.preventDefault();
 
-        // await axios.post('http://localhost:8000/', user)
+        try {
+            console.log('hello')
 
-        return history.push('/welcome')
+            const response = await axios.post('http://localhost:8000/auth/login', user);
+            console.log('get it')
+            console.log(response)
+            // console.log(response)
+            dispatch(resetUser());
+            // // return history.push('/welcome')
+            return dispatch(setToken(response))
+        } catch (e) {
+            return console.log('ayya', e);
+        }
     }
 
     render() {
@@ -30,18 +40,20 @@ class LoginFormComponent extends Component {
                     <TextField
                         label="Email"
                         variant="outlined"
-                        onChange={e => dispatch(setUsername(e.target.value))}
+                        onChange={(e) => dispatch(setUser('email', e.target.value))}
                     />
 
                     <TextField
                         label="Password"
                         variant="outlined"
-                        onChange={e => {
-                            dispatch(setPassword(e.target.value))
-
-                        }}
+                        onChange={e => dispatch(setUser('password', e.target.value))}
                     />
-                    <FormHelperText className="registration-link" onClick={() => history.push('/registration')}>Registrati</FormHelperText>
+                    <FormHelperText
+                        className="registration-link"
+                        onClick={() => history.push('/registration')}
+                    >
+                        Registrazione
+                    </FormHelperText>
                     <Button type="submit"
                         variant="contained"
                         style={{ background: 'red', color: 'white' }}

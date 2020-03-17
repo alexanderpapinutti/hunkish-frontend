@@ -1,23 +1,25 @@
-export function setUsername(payload) {
-    return { type: 'SET_USERNAME', payload };
-};
+export function setUser(propName, payload) {
+    console.log(propName, payload)
+    switch (propName) {
+        case 'username':
+            return { type: 'SET_USERNAME', payload }
+        case 'password':
+            return { type: 'SET_PASSWORD', payload }
+        case 'email':
+            return { type: 'SET_EMAIL', payload }
+        case 'firstName':
+            return { type: 'SET_FIRST_NAME', payload }
+        case 'lastName':
+            return { type: 'SET_LAST_NAME', payload }
+        default:
+            return console.log(`${propName} does not exist`);
+    }
+}
 
-export function setPassword(payload) {
-    return { type: 'SET_PASSWORD', payload };
-};
+export function resetUser() {
+    return { type: 'RESET_USER' }
+}
 
-export function setEmail(payload) {
-    return { type: 'SET_EMAIL', payload };
-};
-
-export function setFirstName(payload) {
-    return { type: 'SET_FIRST_NAME', payload };
-};
-
-export function setLastName(payload) {
-    return { type: 'SET_LAST_NAME', payload };
-};
-
-export function setAuthStep(payload) {
-    return { type: 'SET_AUTH_STEP', payload }
+export function setToken(payload) {
+    return { type: 'SET_TOKEN', payload }
 }

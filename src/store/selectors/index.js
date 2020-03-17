@@ -1,10 +1,9 @@
 import _ from 'lodash';
 
 export function getUser(state) {
-    return _.get(state, 'userInfo');
+    return _.get(state, 'user');
 }
 
-export function getAuthentificationStep(state) {
-    console.log(state)
-    return _.get(state, 'auth.step');
+export function getToken(state) {
+    return _.get(state, 'token');
 }

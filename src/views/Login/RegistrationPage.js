@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { LoginForm, RegistrationForm } from '../../components';
+import React from 'react';
+import { RegistrationForm } from '../../components';
 import { Grid } from '@material-ui/core';
-import { getAuthentificationStep } from '../../store/selectors';
 
 
 function RegistrationPage() {
