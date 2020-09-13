@@ -10,7 +10,7 @@ class RegistrationFormComponent extends Component {
     async handleRegistration(e) {
         const { user } = this.props;
         e.preventDefault();
-        console.log(user)
+
         await axios.post('http://localhost:8000/register', user)
     };
 

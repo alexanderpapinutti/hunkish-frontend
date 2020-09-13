@@ -1,19 +1,19 @@
 const user = (User = {}, { type, payload }) => {
     switch (type) {
         case 'SET_USERNAME':
-            return { ...User, 'username': payload }
+            return { ...User, username: payload }
         case 'SET_PASSWORD':
-            return { ...User, 'password': payload }
+            return { ...User, password: payload }
         case 'SET_EMAIL':
-            return { ...User, 'email': payload }
+            return { ...User, email: payload }
         case 'SET_FIRST_NAME':
-            return { ...User, 'firstName': payload }
+            return { ...User, firstName: payload }
         case 'SET_LAST_NAME':
-            return { ...User, 'lastName': payload }
+            return { ...User, lastName: payload }
         case 'RESET_USER':
-            return User
+            return User = {}
         default:
-            return User
+            return null
     }
 }
 

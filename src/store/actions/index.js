@@ -1,5 +1,4 @@
 export function setUser(propName, payload) {
-    console.log(propName, payload)
     switch (propName) {
         case 'username':
             return { type: 'SET_USERNAME', payload }
@@ -14,6 +13,14 @@ export function setUser(propName, payload) {
         default:
             return console.log(`${propName} does not exist`);
     }
+}
+
+export function showNotification(notificationType, content) {
+    return { type: 'SHOW_NOTIFICATION', notificationType, content }
+}
+
+export function hideNotification() {
+    return { type: 'HIDE_NOTIFICAITON' }
 }
 
 export function resetUser() {

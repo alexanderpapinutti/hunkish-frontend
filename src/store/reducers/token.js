@@ -3,7 +3,7 @@ const token = (token = {}, { type, payload }) => {
         case 'SET_TOKEN':
             return payload
         default:
-            return token
+            return null
     }
 }
 

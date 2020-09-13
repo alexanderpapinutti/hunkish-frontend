@@ -7,3 +7,7 @@ export function getUser(state) {
 export function getToken(state) {
     return _.get(state, 'token');
 }
+
+export function getNotification(state) {
+    return _.get(state, 'notifications')
+}

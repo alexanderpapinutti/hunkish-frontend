@@ -4,12 +4,15 @@ import './style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { LoginPage, WelcomePage, RegistrationPage } from './views';
 import history from './utils/history';
+import { ErrorNotification } from './components';
 
 class App extends Component {
   render() {
     return (
+
       <Router history={history}>
         <div className='container'>
+          <ErrorNotification />
           <Route path='/' exact component={LoginPage} />
           <Route path='/registration' exact component={RegistrationPage} />
           <Route path='/welcome' exact component={WelcomePage} />

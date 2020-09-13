@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { TextField, Button, Paper, FormControl, FormHelperText } from '@material-ui/core';
 import logo from '../assets/logo-milan.png'
-import { setUser, resetUser, setToken } from '../store/actions';
+import { setUser, resetUser, setToken, showNotification } from '../store/actions';
 import { getUser } from '../store/selectors';
 import history from '../utils/history'
 
@@ -13,17 +13,14 @@ class LoginFormComponent extends Component {
         e.preventDefault();
 
         try {
-            console.log('hello')
-
             const response = await axios.post('http://localhost:8000/auth/login', user);
-            console.log('get it')
-            console.log(response)
-            // console.log(response)
             dispatch(resetUser());
-            // // return history.push('/welcome')
-            return dispatch(setToken(response))
+            dispatch(setToken(response))
+
+            return history.push('/welcome')
         } catch (e) {
-            return console.log('ayya', e);
+            console.log('error happend', e)
+            return dispatch(showNotification('error', 'Something went wrong'))
         }
     }
 
