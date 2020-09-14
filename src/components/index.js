@@ -1,5 +1,5 @@
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
-import ErrorNotification from './ErrorNotification';
+import Notification from './Notification';
 
-export { LoginForm, RegistrationForm, ErrorNotification };
+export { LoginForm, RegistrationForm, Notification };

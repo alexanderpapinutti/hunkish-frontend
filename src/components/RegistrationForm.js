@@ -16,6 +16,7 @@ class RegistrationFormComponent extends Component {
 
     render() {
         const { dispatch } = this.props;
+
         return (
             <Paper className="registration-form-card">
                 <FormControl className="form-container">
@@ -71,12 +72,10 @@ class RegistrationFormComponent extends Component {
     }
 };
 
-const selectors = (state) => {
+const RegistrationForm = connect((state) => {
     return {
         user: getUser(state),
     }
-}
-
-const RegistrationForm = connect(selectors)(RegistrationFormComponent)
+})(RegistrationFormComponent)
 
 export default RegistrationForm;
