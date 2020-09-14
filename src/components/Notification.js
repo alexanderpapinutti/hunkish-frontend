@@ -35,7 +35,7 @@ function NotificationComponent({ notification, hideNotification }) {
                         aria-label="close"
                         color="inherit"
                         size="small"
-                        onClick={() => hideNotification(false)}
+                        onClick={() => hideNotification()}
                     >
                         <CloseIcon fontSize="inherit" />
                     </IconButton>
