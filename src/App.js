@@ -19,8 +19,7 @@ const theme = createMuiTheme({
 
 class App extends Component {
   render() {
-
-    const currentPath = window.location.path;
+    const currentPath = window.location.pathname;
     const showHeader = currentPath !== '/' && currentPath !== '/registration';
 
     return (

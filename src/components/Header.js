@@ -9,8 +9,8 @@ import {
     Fade,
     MenuItem,
     ListItemIcon,
-    ListItemText
-
+    ListItemText,
+    Typography
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -106,7 +106,14 @@ export default function Header() {
                             <ListItemText primary="Inbox" />
                         </StyledMenuItem>
                     </StyledMenu>
-                    <Button color="inherit">Hunkish</Button>
+                    <Typography variant="h6" className={classes.title}>
+                        Hunkish
+          </Typography>
+                    <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <Typography variant="h6" className={classes.title}>
+                            Logout
+          </Typography>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div >
