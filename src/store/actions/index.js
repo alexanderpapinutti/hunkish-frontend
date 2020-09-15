@@ -1,4 +1,5 @@
 export function setUser(propName, payload) {
+    console.log(11111)
     switch (propName) {
         case 'username':
             return { type: 'SET_USERNAME', payload }

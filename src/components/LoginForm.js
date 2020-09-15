@@ -15,12 +15,13 @@ class LoginFormComponent extends Component {
         try {
             const response = await axios.post('http://localhost:8000/auth/login', user);
             dispatch(resetUser());
-            dispatch(setToken(response))
+            // console.log(response.data.token)
+            // dispatch(setToken(response.data.token))
 
             return history.push('/welcome')
         } catch (e) {
-            console.log('error happend', e)
-            return dispatch(showNotification('error', 'Something went wrong'))
+            const errorMessage = JSON.stringify(e.message).replace(/"/g, "");
+            return dispatch(showNotification('error', errorMessage))
         }
     }
 
